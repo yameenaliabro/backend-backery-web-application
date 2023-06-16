@@ -1,0 +1,10 @@
+let express = require("express")
+const { addorder, getallorder, acceptuser, rejectstatus, usercheck } = require("../controllers/Order")
+const order = express.Router()
+order.post("/addorder",addorder)
+order.get("/allorder",getallorder)
+order.patch("/setstatus/:id",acceptuser)
+order.put("/rejected/:id",rejectstatus)
+order.put("/accepted/:id",acceptuser)
+order.get("/userorder/:id",usercheck)
+module.exports = order; 
